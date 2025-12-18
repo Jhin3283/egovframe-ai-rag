@@ -25,8 +25,10 @@ public class EgovOllamaModelServiceImpl extends EgovAbstractServiceImpl implemen
         
         try {
             // ollama list 명령어 실행
-            String[] command = new String[]{"ollama", "list"};
-            
+            String fullPath = "C:\\Users\\user\\AppData\\Local\\Programs\\Ollama\\ollama.exe";
+//            String[] command = new String[]{"ollama", "list"};
+            String[] command = new String[]{fullPath, "list"};
+
             // ollama list 명령어 실행
             ProcessBuilder processBuilder = new ProcessBuilder(command);
             processBuilder.redirectErrorStream(true);
@@ -87,8 +89,10 @@ public class EgovOllamaModelServiceImpl extends EgovAbstractServiceImpl implemen
     public boolean isOllamaAvailable() {
         try {
             // ollama --version 명령어로 Ollama 설치 여부 확인
-            String[] command = new String[]{"ollama", "--version"};
-            
+            String fullPath = "C:\\Users\\user\\AppData\\Local\\Programs\\Ollama\\ollama.exe";
+//            String[] command = new String[]{"ollama", "--version"};
+            String[] command = new String[]{fullPath, "--version"};
+
             // ollama --version 명령어로 Ollama 설치 여부 확인
             ProcessBuilder processBuilder = new ProcessBuilder(command);
             processBuilder.redirectErrorStream(true);
